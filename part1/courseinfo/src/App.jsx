@@ -1,36 +1,36 @@
-const Header = ({ course }) => {
+const Header = (props) => {
   return (
     <h1>
-      {course}
+      {props.course}
     </h1>
-  )
-}
+  );
+};
 
-const Part = ({ part }) => {
+const Part = (props) => {
   return (
     <p>
-      {part.name} {part.exercises}
+      {props.part.name} {props.part.exercises}
     </p>
-  )
-}
+  );
+};
 
-const Content = ({ parts }) => {
+const Content = (props) => {
   return (
     <div>
-      <Part part={parts[0]} />
-      <Part part={parts[1]} />
-      <Part part={parts[2]} />
+      <Part part={props.parts[0]} />
+      <Part part={props.parts[1]} />
+      <Part part={props.parts[2]} />
     </div>
-  )
-}
+  );
+};
 
-const Total = ({ parts }) => {
+const Total = (props) => {
   return (
     <p>
-      Number of exercises {parts[0].exercises + parts[1].exercises + parts[2].exercises}
+      Number of exercises {props.parts[0].exercises + props.parts[1].exercises + props.parts[2].exercises}
     </p>
-  )
-}
+  );
+};
 
 const App = () => {
   const course = {
@@ -49,7 +49,7 @@ const App = () => {
         exercises: 14
       }
     ]
-  }
+  };
 
   return (
     <div>
@@ -57,7 +57,7 @@ const App = () => {
       <Content parts={course.parts} />
       <Total parts={course.parts} />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
